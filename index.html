@@ -2,53 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Connect with Rural Roots | Alphalbela</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CandidMen Replica</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Alphalbela - Rural & Urban Ties</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Crops</a></li>
-        <li><a href="#">Migration</a></li>
-        <li><a href="#">Connect</a></li>
+    <nav class="navbar">
+      <div class="logo">CANDIDMEN</div>
+      <ul class="nav-links">
+        <li><a href="#">Rent by Style</a></li>
+        <li><a href="#">Occasion</a></li>
+        <li><a href="#">Preloved</a></li>
+        <li><a href="#">Buy</a></li>
+        <li><a href="#">Stores</a></li>
       </ul>
     </nav>
   </header>
 
-  <section>
-    <h2>Empowering Rural Communities</h2>
-    <p>Alphalbela is a digital bridge between rural farmers and urban citizens. We aim to empower rural communities by promoting local produce, education, and awareness among urban audiences.</p>
-
-    <h3>Resources for Engagement</h3>
-    <ul>
-      <li><a href="https://www.localfarmers.org" target="_blank">Local Farmers Association</a></li>
-      <li><a href="https://www.communitysupportedagriculture.org" target="_blank">Community Supported Agriculture</a></li>
-      <li><a href="https://www.farmersmarket.com" target="_blank">Find a Farmers Market</a></li>
-    </ul>
-
-    <h3>Reach Out to Us</h3>
-    <form id="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Designer Outfits on Rent</h1>
+      <p>From Sherwanis to Tuxedos, Rent Your Style</p>
+      <a href="#products" class="cta-button">Explore Collection</a>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Alphalbela | Connecting Rural & Urban India</p>
+  <section id="products" class="product-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x400" alt="Product 1">
+      <h3>Black Tuxedo Set</h3>
+      <p class="price">Rent: ₹1,999 <span class="original">₹3,999</span></p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x400" alt="Product 2">
+      <h3>Classic Wedding Sherwani</h3>
+      <p class="price">Rent: ₹2,499 <span class="original">₹4,999</span></p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x400" alt="Product 3">
+      <h3>Bandhgala Suit</h3>
+      <p class="price">Rent: ₹1,799 <span class="original">₹3,299</span></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-cols">
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#">FAQs</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Terms</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2025 CandidMen. All rights reserved.</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
