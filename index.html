@@ -1,80 +1,62 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Shivin Replica</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kaushal Dhaingar | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Dr. Shivin</div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Free Resources</a></li>
-        <li><a href="#">Write Smart</a></li>
-        <li><a href="#">GS-3 Module</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
+  <header class="navbar">
+    <div class="logo">Er Kaushal Dhaingar</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-text">
-      <h1>Crack UPSC with Strategy + Structure</h1>
-      <p>Join Dr. Shivin and access high-quality guidance and mentorship for UPSC CSE.</p>
-      <a href="#modules" class="cta-button">Explore Programs</a>
+      <h1>Kaushal Dhaingar</h1>
+      <p>IIT Tirupati • Aspiring Engineer • Coding Enthusiast</p>
+    </div>
+    <!-- Optionally: Insert a professional image -->
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>[Brief bio here]</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <!-- Repeat per project -->
+      <div class="project-card">
+        <h3>Project Title</h3>
+        <p>Short description...</p>
+        <a href="#">View →</a>
+      </div>
     </div>
   </section>
 
-  <section id="modules" class="product-grid">
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200" alt="Resource" />
-      <h3>Free Resources</h3>
-      <p>Notes and tools for prelims & mains across all GS papers.</p>
-    </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200" alt="Write Smart" />
-      <h3>Write Smart</h3>
-      <p>Topic-wise PYQ-based answer writing for GS.</p>
-    </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/300x200" alt="GS3 Module" />
-      <h3>GS-3 Mains Module</h3>
-      <p>Notes, handouts and strategies for Environment, Security, S&T, etc.</p>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <!-- e.g. -->
+      <span>Python</span>
+      <span>Data Analysis</span>
+      <span>3D Printing</span>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer-cols">
-      <div>
-        <h4>About</h4>
-        <a href="#">Profile</a>
-        <a href="#">Mission</a>
-        <a href="#">Media</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="#">Telegram</a>
-        <a href="#">YouTube</a>
-        <a href="#">Support</a>
-      </div>
-      <div>
-        <h4>Programs</h4>
-        <a href="#">Mains Mentorship</a>
-        <a href="#">Prelims Analysis</a>
-        <a href="#">GS-3 Notes</a>
-      </div>
-    </div>
-    <p class="copyright">
-      &copy; 2025 Dr. Shivin. Educational replica only.
-    </p>
+  <footer id="contact">
+    <h2>Contact</h2>
+    <p>Email: example@domain.com</p>
+    <p>LinkedIn: <a href="#">Profile</a></p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
