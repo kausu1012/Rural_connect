@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alphalbela</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-color: #f4f4f4;
-    }
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alphalbela Meal Planner</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <iframe 
-    src="https://docs.google.com/document/d/e/2PACX-1vQzGJmKqAA4yfXfWz5Gf0MVYr1K639e2lx15uSS22gDSbyzMIAYCmYJXXaNzEqY79hNlFD72xnzSsRV/pub?embedded=true">
-  </iframe>
+  <header>
+    <h1>🍽 Daily Meal Planner</h1>
+    <p>Track your breakfast and snacks — stay on schedule!</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Breakfast</h2>
+      <ul id="breakfast-list"></ul>
+    </section>
+
+    <section>
+      <h2>Snacks</h2>
+      <ul id="snacks-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Powered by Alphalbela</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
