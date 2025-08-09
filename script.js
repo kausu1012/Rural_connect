@@ -1,28 +1,39 @@
-window.onload = () => {
-  const saved = JSON.parse(localStorage.getItem("expenses")) || [];
-  saved.forEach(addToLog);
+const meals = {
+  breakfast: ["Oatmeal with fruits", "Boiled eggs", "Green tea"],
+  snacks: ["Protein bar", "Mixed nuts", "Yogurt"]
 };
 
-function scrollToCalculator() {
-  document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+function loadMeals() {
+  ["breakfast", "snacks"].forEach(type => {
+    const list = document.getElementById(`${type}-list`);
+    meals[type].forEach((item, index) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+
+      const btn = document.createElement("button");
+      const key = `${type}-${index}`;
+      const completed = localStorage.getItem(key) === "true";
+
+      if (completed) {
+        li.classList.add("completed");
+        btn.textContent = "Incomplete";
+        btn.classList.add("incomplete");
+      } else {
+        btn.textContent = "Complete";
+        btn.classList.add("complete");
+      }
+
+      btn.addEventListener("click", () => {
+        const isComplete = li.classList.toggle("completed");
+        btn.textContent = isComplete ? "Incomplete" : "Complete";
+        btn.className = isComplete ? "incomplete" : "complete";
+        localStorage.setItem(key, isComplete);
+      });
+
+      li.appendChild(btn);
+      list.appendChild(li);
+    });
+  });
 }
 
-function calculateExpenses() {
-  const a1 = parseFloat(document.getElementById("amount1").value) || 0;
-  const a2 = parseFloat(document.getElementById("amount2").value) || 0;
-  const total = a1 + a2;
-  document.getElementById("result").innerText = `Total: ₹${total}`;
-
-  const entry = `₹${a1} + ₹${a2} = ₹${total}`;
-  addToLog(entry);
-
-  const log = JSON.parse(localStorage.getItem("expenses")) || [];
-  log.push(entry);
-  localStorage.setItem("expenses", JSON.stringify(log));
-}
-
-function addToLog(entry) {
-  const li = document.createElement("li");
-  li.textContent = entry;
-  document.getElementById("entryList").appendChild(li);
-}
+document.addEventListener("DOMContentLoaded", loadMeals);
