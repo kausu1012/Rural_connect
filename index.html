@@ -5,17 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Book Appointment — Er. Kaushal</title>
 
-  <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/logo_photo.jpg" alt="Er. Kaushal logo" class="logo" />
-      </div>
+      <a class="brand" href="/">
+        <img src="https://i.ibb.co/mrFm5Y7P/logo-photo.jpg" alt="Er. Kaushal logo" class="logo" />
+      </a>
       <button class="menu-btn" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -23,21 +21,20 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
-        <h1>Book An Appointment</h1>
-        <p class="subtitle">Your health matters — pick a convenient date & time and we'll reserve a slot for you.</p>
+        <h1 class="hero-title">Book Your Wellness Appointment</h1>
+        <p class="hero-sub">Gentle, professional care — choose a date & time that suits you. Small healthy steps, big results.</p>
       </div>
     </section>
 
-    <!-- BOOKING AREA -->
+    <!-- Booking -->
     <section class="container booking-section" aria-labelledby="booking-heading">
       <h2 id="booking-heading" class="section-title">Schedule Your Visit</h2>
 
       <div class="booking-grid">
-        <!-- Calendar card -->
         <div class="card calendar-card" aria-label="Calendar">
           <div class="calendar-header">
             <button id="prev-month" class="nav-month" aria-label="Previous month">&lt;</button>
@@ -50,14 +47,11 @@
           </div>
 
           <div id="calendar" class="calendar-grid" role="grid" aria-label="Calendar days"></div>
-
           <p class="hint"><strong>Green</strong> = available • <span class="gray-dot">grayed</span> = unavailable</p>
         </div>
 
-        <!-- Form card -->
         <div class="card form-card">
           <form id="booking-form" name="booking" method="POST" data-netlify="true" action="/thank-you.html" novalidate>
-            <!-- Netlify requirement -->
             <input type="hidden" name="form-name" value="booking" />
             <input type="hidden" name="selected-date" id="selected-date-hidden" />
             <input type="hidden" name="selected-time" id="selected-time-hidden" />
@@ -67,14 +61,15 @@
               <input id="visitor-name" name="name" type="text" placeholder="Your full name" required />
             </div>
 
-            <div class="form-row">
-              <label for="visitor-phone">Phone</label>
-              <input id="visitor-phone" name="phone" type="tel" placeholder="+91 9xxxxxxxxx" required />
-            </div>
-
-            <div class="form-row">
-              <label for="visitor-email">Email (optional)</label>
-              <input id="visitor-email" name="email" type="email" placeholder="you@example.com" />
+            <div class="form-row two">
+              <div>
+                <label for="visitor-phone">Phone</label>
+                <input id="visitor-phone" name="phone" type="tel" placeholder="+91 9xxxxxxxxx" required />
+              </div>
+              <div>
+                <label for="visitor-email">Email (optional)</label>
+                <input id="visitor-email" name="email" type="email" placeholder="you@example.com" />
+              </div>
             </div>
 
             <div class="form-row times-row">
@@ -106,7 +101,7 @@
       </div>
     </section>
 
-    <!-- Confirmation modal (hidden until needed) -->
+    <!-- Modal -->
     <div id="confirmModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
       <div class="modal-content">
         <h3>Confirm Your Booking</h3>
