@@ -1,31 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alphalbela Meal Planner</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Er. Kaushal | Portfolio & Meal Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>🍽 Daily Meal Planner</h1>
-    <p>Track your breakfast and snacks — stay on schedule!</p>
+    <div class="container header-inner">
+      <h1 class="brand">Er. Kaushal Dhaingar</h1>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#meals">Meals</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>Breakfast</h2>
-      <ul id="breakfast-list"></ul>
+    <section class="hero">
+      <div class="container">
+        <h2>Doing and working to make and create change as a whole globally.</h2>
+        <p>Engineer | Developer | Problem Solver</p>
+      </div>
     </section>
 
-    <section>
-      <h2>Snacks</h2>
-      <ul id="snacks-list"></ul>
+    <section id="about" class="section container">
+      <h3>About Me</h3>
+      <p>Hello! I'm Er. Kaushal Dhaingar, an aspiring full-stack developer and tech enthusiast passionate about building impactful digital solutions and transforming ideas into reality.</p>
+    </section>
+
+    <section id="projects" class="section container">
+      <h3>Projects</h3>
+      <div class="projects-grid">
+        <div class="card">
+          <h4>ALPHALBELA</h4>
+          <p>Fashion & rental website — e-commerce features, admin panel, and cart system.</p>
+        </div>
+        <div class="card">
+          <h4>Expense Calculator</h4>
+          <p>Splitwise-style expense tracker with login and persistent storage.</p>
+        </div>
+        <div class="card">
+          <h4>CandidMen</h4>
+          <p>Platform for rental and resale across rural & urban users (including agri-crops).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Meal Planner Section -->
+    <section id="meals" class="section container">
+      <div class="meals-header">
+        <h3>Daily Meal Planner</h3>
+        <div class="meals-meta">
+          <span id="planner-date"></span>
+          <button id="reset-day" class="btn small ghost" title="Reset today's progress">Reset Today</button>
+        </div>
+      </div>
+
+      <div class="meals-grid">
+        <div class="card meal-card">
+          <h4>Breakfast</h4>
+          <ul id="breakfast-list" class="meal-list" aria-live="polite"></ul>
+          <div class="add-row">
+            <input id="breakfast-new" placeholder="Add breakfast item" />
+            <button id="add-breakfast" class="btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card meal-card">
+          <h4>Snacks</h4>
+          <ul id="snacks-list" class="meal-list" aria-live="polite"></ul>
+          <div class="add-row">
+            <input id="snacks-new" placeholder="Add snack item" />
+            <button id="add-snack" class="btn">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="meals-legend">
+        <span class="dot complete"></span> Completed
+        <span class="dot missed"></span> Missed / Incomplete
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h3>Contact Me</h3>
+      <p>Email: erkaushal@gmail.com | Phone: +91 9680209403</p>
+      <p><a href="https://www.linkedin.com/in/kaushaldhaingar" target="_blank">LinkedIn</a> • <a href="https://github.com/kausu1012" target="_blank">GitHub</a></p>
     </section>
   </main>
 
   <footer>
-    <p>Powered by Alphalbela</p>
+    <div class="container">
+      &copy; <span id="year"></span> Er. Kaushal Dhaingar. All rights reserved.
+    </div>
   </footer>
 
   <script src="script.js"></script>
