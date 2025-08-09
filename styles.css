@@ -1,45 +1,61 @@
-/* style.css */
 body {
   font-family: Arial, sans-serif;
-  margin: 0; padding: 0;
-  color: #333; background: #f4f4f4;
+  margin: 0;
+  background: #fafafa;
+  color: #333;
 }
 
-.navbar {
-  display: flex; justify-content: space-between;
-  align-items: center; padding: 1rem 2rem;
-  background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: sticky; top: 0;
+header {
+  text-align: center;
+  padding: 1.5rem;
+  background: #ffcc70;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.navbar nav a {
-  margin-left: 1rem; text-decoration: none; color: #333;
+h1 {
+  margin: 0;
 }
 
-.hero {
-  background: #e0f7fa; padding: 4rem 2rem; text-align: center;
+section {
+  margin: 2rem auto;
+  max-width: 500px;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-.hero p { font-size: 1.2rem; }
-
-section { padding: 2rem; max-width: 800px; margin: auto; }
-
-.project-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.project-card {
-  background: white; padding: 1rem; border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem;
+  border-bottom: 1px solid #eee;
 }
 
-.skills-list span {
-  display: inline-block; background: #e0e0e0; padding: 0.5rem 1rem;
-  margin: 0.2rem; border-radius: 20px;
+li.completed {
+  text-decoration: line-through;
+  color: gray;
 }
 
-footer {
-  background: #333; color: white; text-align: center; padding: 2rem;
+button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.complete {
+  background: #4caf50;
+  color: white;
+}
+
+button.incomplete {
+  background: #f44336;
+  color: white;
 }
