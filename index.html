@@ -1,173 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ALPHALBELA — Rentals & Sales</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f5f6f8;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#ffb366;
-      --green:#29b067;
-      --orange:#ff9b00;
-      --shadow: 0 6px 18px rgba(15,23,42,0.08);
-      --radius:12px;
-    }
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; margin:0; background:var(--bg); color:#111}
-
-    /* Header */
-    header{background:#fff; box-shadow:0 1px 0 rgba(16,24,40,0.04); position:sticky; top:0; z-index:30}
-    .container{max-width:1200px; margin:0 auto; padding:20px}
-    .nav{display:flex; align-items:center; justify-content:space-between}
-    .brand{display:flex; align-items:center; gap:12px}
-    .logo{width:44px; height:44px; background:linear-gradient(135deg,#9b5cff,#5cc3ff); border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-weight:800}
-    .brand h1{font-size:20px; margin:0}
-    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0; align-items:center}
-    nav a{color:#374151; text-decoration:none; font-weight:500}
-
-    /* Hero */
-    .hero{background:linear-gradient(90deg, #ffe9d6 0%, #ffd0c4 50%, #ffd7e0 100%); padding:56px 0 40px; margin-top:12px}
-    .hero-inner{display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px}
-    .hero h2{font-size:40px; margin:0; letter-spacing:-0.5px}
-    .hero p{color:var(--muted); max-width:800px; margin:0}
-
-    /* Product grid */
-    .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:28px}
-    .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column}
-    .card .img{height:220px; background-size:cover; background-position:center}
-    .card .body{padding:18px; display:flex; flex-direction:column; gap:10px}
-    .title{font-weight:700}
-    .desc{color:var(--muted); font-size:14px}
-    .actions{margin-top:auto; display:flex; gap:10px}
-    .btn{padding:8px 12px; border-radius:8px; font-weight:700; border:0; cursor:pointer}
-    .btn.rent{background:var(--orange); color:white}
-    .btn.buy{background:var(--green); color:white}
-
-    /* Footer */
-    footer{padding:40px 0; color:var(--muted); text-align:center}
-
-    /* Responsive */
-    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){
-      .container{padding:16px}
-      .grid{grid-template-columns:repeat(1,1fr)}
-      .hero h2{font-size:28px}
-      nav ul{display:none}
-    }
-
-    /* small util */
-    .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(0,0,0,0.04); font-weight:600}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHALBELA</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
+    <header>
+        <div class="logo">ALPHALBELA</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Cart</a>
+            <a href="#">Admin</a>
+        </nav>
+    </header>
 
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <div class="logo">A+</div>
-      <h1>ALPHALBELA</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#men">Men</a></li>
-        <li><a href="#women">Women</a></li>
-        <li><a href="#cart">Cart</a></li>
-        <li><a href="#admin">Admin</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <section class="hero">
+        <h1>Welcome to Rental Website for Your Daily Needs</h1>
+        <p>Style delivered to your door. Rent or buy the latest fashion today.</p>
+    </section>
 
-<main class="container">
-  <section class="hero">
-    <div class="hero-inner">
-      <h2>Welcome to Rental Website for Your Daily Needs</h2>
-      <p>Style delivered to your door. Rent or buy the latest fashion today. Fast checkout — flexible rental durations — trusted delivery.</p>
-    </div>
-  </section>
+    <section class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="https://i.ibb.co/dwrfPx45/cap.jpg" alt="cap">
+            <h3>Casual Cap</h3>
+            <p>Perfect for your everyday outdoor look.</p>
+            <div class="btn-group">
+                <a href="#" class="btn rent">Rent Now</a>
+                <a href="#" class="btn buy">Buy Now</a>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://i.ibb.co/NnY2nQW6/night-wear.jpg" alt="Night Wear">
+            <h3>Night Wear Set</h3>
+            <p>Comfortable & cozy sleepwear for all seasons.</p>
+            <div class="btn-group">
+                <a href="#" class="btn rent">Rent Now</a>
+                <a href="#" class="btn buy">Buy Now</a>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="https://i.ibb.co/JFygqp3F/pair.jpg" alt="Couple Pair">
+            <h3>Couple Wear</h3>
+            <p>Perfect outfit match for you and your partner.</p>
+            <div class="btn-group">
+                <a href="#" class="btn rent">Rent Now</a>
+                <a href="#" class="btn buy">Buy Now</a>
+            </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="https://i.ibb.co/qSPb2KC/Royal.jpg" alt="Royal Wear">
+            <h3>Royal Tshirt</h3>
+            <p>For your grand celebrations and weddings.</p>
+            <div class="btn-group">
+                <a href="#" class="btn rent">Rent Now</a>
+                <a href="#" class="btn buy">Buy Now</a>
+            </div>
+        </div>
+        <!-- Product 5 -->
+        <div class="product-card">
+            <img src="https://i.ibb.co/j9W6n4Sg/Suits.jpg" alt="Suits">
+            <h3>Formal Suits</h3>
+            <p>Sharp looks for office and formal events.</p>
+            <div class="btn-group">
+                <a href="#" class="btn rent">Rent Now</a>
+                <a href="#" class="btn buy">Buy Now</a>
+            </div>
+        </div>
+        <!-- Product 6 -->
+        <div class="product-card">
+            <img src="https://i.ibb.co/Gvf7qDtB/Woolen-coat.jpg" alt="Woolen Coat">
+            <h3>Woolen Coat</h3>
+            <p>Warmth and elegance in cold weather.</p>
+            <div class="btn-group">
+                <a href="#" class="btn rent">Rent Now</a>
+                <a href="#" class="btn buy">Buy Now</a>
+            </div>
+        </div>
+    </section>
 
-  <section style="margin-top:26px">
-    <div style="display:flex; justify-content:space-between; align-items:center">
-      <h3 style="margin:0">Featured Items</h3>
-      <div class="pill">Free delivery over ₹999</div>
-    </div>
-
-    <div class="grid" id="product-grid" style="margin-top:16px">
-      <!-- Cards inserted by JS -->
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <div style="max-width:900px; margin:0 auto">© <strong>ALPHALBELA</strong> — Rent. Wear. Return. Built with ❤️</div>
-  </div>
-</footer>
-
-<script>
-  // Sample product data — replace with API from FastAPI later
-  const products = [
-    {id:1,title:'Casual Cap',desc:'Perfect for your everyday outdoor look.',img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=60'},
-    {id:2,title:'Night Wear Set',desc:'Comfortable & cozy sleepwear for all seasons.',img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=60'},
-    {id:3,title:'Couple Wear',desc:'Perfect outfit match for you and your partner.',img:'https://images.unsplash.com/photo-1531123414780-f2cdbf4bdb3b?w=1200&q=60'},
-    {id:4,title:'Royal Tshirt',desc:'For your grand celebrations and weddings.',img:'https://images.unsplash.com/photo-1520975912923-6f6a7ee3b1b6?w=800&q=60'},
-    {id:5,title:'Formal Suits',desc:'Sharp looks for office and formal events.',img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=60'},
-    {id:6,title:'Woolen Coat',desc:'Warmth and elegance in cold weather.',img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=60'}
-  ];
-
-  const grid = document.getElementById('product-grid');
-  function createCard(p){
-    const el = document.createElement('div'); el.className='card';
-    const img = document.createElement('div'); img.className='img'; img.style.backgroundImage = `url(${p.img})`;
-    const body = document.createElement('div'); body.className='body';
-    const title = document.createElement('div'); title.className='title'; title.textContent = p.title;
-    const desc = document.createElement('div'); desc.className='desc'; desc.textContent = p.desc;
-    const actions = document.createElement('div'); actions.className='actions';
-    const rent = document.createElement('button'); rent.className='btn rent'; rent.textContent='Rent Now';
-    const buy = document.createElement('button'); buy.className='btn buy'; buy.textContent='Buy Now';
-
-    // Add simple handlers
-    rent.onclick = ()=> openModal(p,'rent');
-    buy.onclick = ()=> openModal(p,'buy');
-
-    actions.appendChild(rent); actions.appendChild(buy);
-    body.appendChild(title); body.appendChild(desc); body.appendChild(actions);
-    el.appendChild(img); el.appendChild(body);
-    return el;
-  }
-
-  products.forEach(p=> grid.appendChild(createCard(p)));
-
-  // Minimal modal (quick demo)
-  function openModal(product,mode){
-    const overlay = document.createElement('div');
-    overlay.style.position='fixed'; overlay.style.inset=0; overlay.style.background='rgba(0,0,0,0.4)'; overlay.style.display='flex'; overlay.style.alignItems='center'; overlay.style.justifyContent='center'; overlay.style.zIndex=60;
-    const box = document.createElement('div'); box.style.background='white'; box.style.padding='20px'; box.style.borderRadius='12px'; box.style.maxWidth='480px'; box.style.width='92%';
-    box.innerHTML = `<h3 style=\"margin:0 0 12px\">${product.title}</h3><p style=\"color:var(--muted)\">You chose to <strong>${mode==='rent'?'Rent':'Buy'}</strong> this item.</p><div style=\"display:flex; gap:10px; margin-top:16px; justify-content:flex-end\"> <button id=\"cancelBtn\" class=\"btn\" style=\"background:transparent; border:1px solid #eee\">Cancel</button> <button id=\"confirmBtn\" class=\"btn ${mode==='rent'?'rent':'buy'}\">Confirm</button></div>`;
-    overlay.appendChild(box);
-    document.body.appendChild(overlay);
-    document.getElementById('cancelBtn').onclick = ()=> overlay.remove();
-    document.getElementById('confirmBtn').onclick = ()=> { 
-      // TODO: call backend API to create order/rental
-      alert(`${mode==='rent'?'Rental request':'Purchase'} placed for ${product.title}`);
-      overlay.remove();
-    };
-  }
-
-  // Placeholder for connecting with FastAPI:
-  // - GET /api/products -> returns products array
-  // - POST /api/orders {product_id, mode, user_id, duration} -> creates order
-  // - Auth endpoints: /auth/login, /auth/register (JWT)
-  // When you want, I can generate a minimal FastAPI backend (app.py) with SQLite and these endpoints.
-
-</script>
+    <script src="/static/js/scripts.js"></script>
 </body>
 </html>
