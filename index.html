@@ -1,125 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Book Appointment — Er. Kaushal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ALPHALBELA — Rentals & Sales</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f6f8;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#ffb366;
+      --green:#29b067;
+      --orange:#ff9b00;
+      --shadow: 0 6px 18px rgba(15,23,42,0.08);
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; margin:0; background:var(--bg); color:#111}
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    /* Header */
+    header{background:#fff; box-shadow:0 1px 0 rgba(16,24,40,0.04); position:sticky; top:0; z-index:30}
+    .container{max-width:1200px; margin:0 auto; padding:20px}
+    .nav{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:44px; height:44px; background:linear-gradient(135deg,#9b5cff,#5cc3ff); border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-weight:800}
+    .brand h1{font-size:20px; margin:0}
+    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0; align-items:center}
+    nav a{color:#374151; text-decoration:none; font-weight:500}
+
+    /* Hero */
+    .hero{background:linear-gradient(90deg, #ffe9d6 0%, #ffd0c4 50%, #ffd7e0 100%); padding:56px 0 40px; margin-top:12px}
+    .hero-inner{display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px}
+    .hero h2{font-size:40px; margin:0; letter-spacing:-0.5px}
+    .hero p{color:var(--muted); max-width:800px; margin:0}
+
+    /* Product grid */
+    .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:28px}
+    .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column}
+    .card .img{height:220px; background-size:cover; background-position:center}
+    .card .body{padding:18px; display:flex; flex-direction:column; gap:10px}
+    .title{font-weight:700}
+    .desc{color:var(--muted); font-size:14px}
+    .actions{margin-top:auto; display:flex; gap:10px}
+    .btn{padding:8px 12px; border-radius:8px; font-weight:700; border:0; cursor:pointer}
+    .btn.rent{background:var(--orange); color:white}
+    .btn.buy{background:var(--green); color:white}
+
+    /* Footer */
+    footer{padding:40px 0; color:var(--muted); text-align:center}
+
+    /* Responsive */
+    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){
+      .container{padding:16px}
+      .grid{grid-template-columns:repeat(1,1fr)}
+      .hero h2{font-size:28px}
+      nav ul{display:none}
+    }
+
+    /* small util */
+    .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(0,0,0,0.04); font-weight:600}
+
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">
-        <img src="https://i.ibb.co/mrFm5Y7P/logo-photo.jpg" alt="Er. Kaushal logo" class="logo" />
-      </a>
-      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">A+</div>
+      <h1>ALPHALBELA</h1>
     </div>
-  </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#men">Men</a></li>
+        <li><a href="#women">Women</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#admin">Admin</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <h1 class="hero-title">Book Your Wellness Appointment</h1>
-        <p class="hero-sub">Gentle, professional care — choose a date & time that suits you. Small healthy steps, big results.</p>
-      </div>
-    </section>
-
-    <!-- Booking -->
-    <section class="container booking-section" aria-labelledby="booking-heading">
-      <h2 id="booking-heading" class="section-title">Schedule Your Visit</h2>
-
-      <div class="booking-grid">
-        <div class="card calendar-card" aria-label="Calendar">
-          <div class="calendar-header">
-            <button id="prev-month" class="nav-month" aria-label="Previous month">&lt;</button>
-            <div class="month-label" id="monthLabel" aria-live="polite"></div>
-            <button id="next-month" class="nav-month" aria-label="Next month">&gt;</button>
-          </div>
-
-          <div class="calendar-weekdays" aria-hidden="true">
-            <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
-          </div>
-
-          <div id="calendar" class="calendar-grid" role="grid" aria-label="Calendar days"></div>
-          <p class="hint"><strong>Green</strong> = available • <span class="gray-dot">grayed</span> = unavailable</p>
-        </div>
-
-        <div class="card form-card">
-          <form id="booking-form" name="booking" method="POST" data-netlify="true" action="/thank-you.html" novalidate>
-            <input type="hidden" name="form-name" value="booking" />
-            <input type="hidden" name="selected-date" id="selected-date-hidden" />
-            <input type="hidden" name="selected-time" id="selected-time-hidden" />
-
-            <div class="form-row">
-              <label for="visitor-name">Full name</label>
-              <input id="visitor-name" name="name" type="text" placeholder="Your full name" required />
-            </div>
-
-            <div class="form-row two">
-              <div>
-                <label for="visitor-phone">Phone</label>
-                <input id="visitor-phone" name="phone" type="tel" placeholder="+91 9xxxxxxxxx" required />
-              </div>
-              <div>
-                <label for="visitor-email">Email (optional)</label>
-                <input id="visitor-email" name="email" type="email" placeholder="you@example.com" />
-              </div>
-            </div>
-
-            <div class="form-row times-row">
-              <label>Choose time</label>
-              <div id="time-slots" class="time-slots" aria-live="polite"></div>
-              <div class="small muted" id="no-times-hint">Select a date to view available times</div>
-            </div>
-
-            <div class="form-row">
-              <label for="notes">Notes (optional)</label>
-              <textarea id="notes" name="notes" rows="3" placeholder="Any health notes or preferences"></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" id="submitBtn" class="btn primary">Book Appointment</button>
-              <button type="button" id="clearBtn" class="btn ghost">Clear</button>
-            </div>
-          </form>
-
-          <div class="health-tips">
-            <h4>Quick Health Tips</h4>
-            <ul>
-              <li>Stay hydrated before your visit.</li>
-              <li>Avoid heavy meals 1–2 hours prior.</li>
-              <li>Bring any recent medical reports.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal -->
-    <div id="confirmModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-      <div class="modal-content">
-        <h3>Confirm Your Booking</h3>
-        <div id="summary"></div>
-        <div class="modal-actions">
-          <button id="confirmSend" class="btn primary">Confirm & Send</button>
-          <button id="cancelSend" class="btn ghost">Cancel</button>
-        </div>
-      </div>
+<main class="container">
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Welcome to Rental Website for Your Daily Needs</h2>
+      <p>Style delivered to your door. Rent or buy the latest fashion today. Fast checkout — flexible rental durations — trusted delivery.</p>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Er. Kaushal Dhaingar • Health & Wellness</p>
+  <section style="margin-top:26px">
+    <div style="display:flex; justify-content:space-between; align-items:center">
+      <h3 style="margin:0">Featured Items</h3>
+      <div class="pill">Free delivery over ₹999</div>
     </div>
-  </footer>
 
-  <script src="script.js" defer></script>
+    <div class="grid" id="product-grid" style="margin-top:16px">
+      <!-- Cards inserted by JS -->
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div style="max-width:900px; margin:0 auto">© <strong>ALPHALBELA</strong> — Rent. Wear. Return. Built with ❤️</div>
+  </div>
+</footer>
+
+<script>
+  // Sample product data — replace with API from FastAPI later
+  const products = [
+    {id:1,title:'Casual Cap',desc:'Perfect for your everyday outdoor look.',img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=60'},
+    {id:2,title:'Night Wear Set',desc:'Comfortable & cozy sleepwear for all seasons.',img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=60'},
+    {id:3,title:'Couple Wear',desc:'Perfect outfit match for you and your partner.',img:'https://images.unsplash.com/photo-1531123414780-f2cdbf4bdb3b?w=1200&q=60'},
+    {id:4,title:'Royal Tshirt',desc:'For your grand celebrations and weddings.',img:'https://images.unsplash.com/photo-1520975912923-6f6a7ee3b1b6?w=800&q=60'},
+    {id:5,title:'Formal Suits',desc:'Sharp looks for office and formal events.',img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=60'},
+    {id:6,title:'Woolen Coat',desc:'Warmth and elegance in cold weather.',img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=60'}
+  ];
+
+  const grid = document.getElementById('product-grid');
+  function createCard(p){
+    const el = document.createElement('div'); el.className='card';
+    const img = document.createElement('div'); img.className='img'; img.style.backgroundImage = `url(${p.img})`;
+    const body = document.createElement('div'); body.className='body';
+    const title = document.createElement('div'); title.className='title'; title.textContent = p.title;
+    const desc = document.createElement('div'); desc.className='desc'; desc.textContent = p.desc;
+    const actions = document.createElement('div'); actions.className='actions';
+    const rent = document.createElement('button'); rent.className='btn rent'; rent.textContent='Rent Now';
+    const buy = document.createElement('button'); buy.className='btn buy'; buy.textContent='Buy Now';
+
+    // Add simple handlers
+    rent.onclick = ()=> openModal(p,'rent');
+    buy.onclick = ()=> openModal(p,'buy');
+
+    actions.appendChild(rent); actions.appendChild(buy);
+    body.appendChild(title); body.appendChild(desc); body.appendChild(actions);
+    el.appendChild(img); el.appendChild(body);
+    return el;
+  }
+
+  products.forEach(p=> grid.appendChild(createCard(p)));
+
+  // Minimal modal (quick demo)
+  function openModal(product,mode){
+    const overlay = document.createElement('div');
+    overlay.style.position='fixed'; overlay.style.inset=0; overlay.style.background='rgba(0,0,0,0.4)'; overlay.style.display='flex'; overlay.style.alignItems='center'; overlay.style.justifyContent='center'; overlay.style.zIndex=60;
+    const box = document.createElement('div'); box.style.background='white'; box.style.padding='20px'; box.style.borderRadius='12px'; box.style.maxWidth='480px'; box.style.width='92%';
+    box.innerHTML = `<h3 style=\"margin:0 0 12px\">${product.title}</h3><p style=\"color:var(--muted)\">You chose to <strong>${mode==='rent'?'Rent':'Buy'}</strong> this item.</p><div style=\"display:flex; gap:10px; margin-top:16px; justify-content:flex-end\"> <button id=\"cancelBtn\" class=\"btn\" style=\"background:transparent; border:1px solid #eee\">Cancel</button> <button id=\"confirmBtn\" class=\"btn ${mode==='rent'?'rent':'buy'}\">Confirm</button></div>`;
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+    document.getElementById('cancelBtn').onclick = ()=> overlay.remove();
+    document.getElementById('confirmBtn').onclick = ()=> { 
+      // TODO: call backend API to create order/rental
+      alert(`${mode==='rent'?'Rental request':'Purchase'} placed for ${product.title}`);
+      overlay.remove();
+    };
+  }
+
+  // Placeholder for connecting with FastAPI:
+  // - GET /api/products -> returns products array
+  // - POST /api/orders {product_id, mode, user_id, duration} -> creates order
+  // - Auth endpoints: /auth/login, /auth/register (JWT)
+  // When you want, I can generate a minimal FastAPI backend (app.py) with SQLite and these endpoints.
+
+</script>
 </body>
 </html>
