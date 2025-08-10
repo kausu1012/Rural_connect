@@ -1,44 +1,64 @@
-body {
+/* Reset & Base */
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #f7f7f7;
-}
-
-header {
-  background: linear-gradient(to right, #000, #444);
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-#logo {
-  height: 60px;
-  vertical-align: middle;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  background: #111;
   padding: 0;
-  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background: #f9f9f9;
+  color: #333;
+}
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  margin-top: 25px;
+  color: #00539C;
+}
+h3 {
+  margin-top: 15px;
+  color: #0073e6;
 }
 
-nav li {
-  margin: 0 1rem;
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+thead {
+  background: #e9f5ff;
 }
 
-nav a {
+/* Details Toggle */
+#details {
+  display: none; /* initially hidden */
+}
+
+/* Toggle Button */
+#toggleDetails {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #00539C;
   color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+  border: none;
+  border-radius: 5px;
 }
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
-  padding: 2rem;
+#toggleDetails:hover {
+  background-color: #003f7d;
 }
