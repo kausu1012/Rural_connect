@@ -1,107 +1,44 @@
-:root{
-  --bg:#f7f9f8;
-  --card:#ffffff;
-  --muted:#6b7280;
-  --accent:#16a34a;
-  --accent-600:#13803d;
-  --glass: rgba(2,6,23,0.03);
-  --radius:12px;
-  --container:1100px;
-  --shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
-  --transition: 220ms cubic-bezier(.2,.9,.3,1);
-}
-*{box-sizing:border-box}
-html,body{height:100%;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
-body{margin:0;background:linear-gradient(180deg,#f2f6f3, #f7f9f8);color:#0f1724;-webkit-font-smoothing:antialiased}
-.container{max-width:var(--container);margin:0 auto;padding:0 18px}
-
-/* Header */
-.site-header{background:transparent;padding:18px 0;position:sticky;top:0;z-index:30}
-.header-inner{display:flex;align-items:center;justify-content:space-between}
-.logo{height:44px;display:block;border-radius:8px;box-shadow:0 4px 18px rgba(2,6,23,0.06)}
-.menu-btn{background:transparent;border:0;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:4px}
-.menu-btn span{display:block;width:22px;height:2px;background:#0f1724;border-radius:2px;transition:all var(--transition)}
-
-/* Hero */
-.hero{height:300px;position:relative;border-radius:12px;overflow:hidden;margin:18px 0;background-image:url('https://i.ibb.co/t57BnNP/image-background.webp');background-size:cover;background-position:center;transform:translateZ(0);}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.36), rgba(2,6,23,0.18))}
-.hero-inner{position:relative;z-index:2;padding:48px 18px;color:white;max-width:var(--container);margin:0 auto}
-.hero-title{margin:0;font-size:2.1rem;letter-spacing:0.2px;opacity:0;transform:translateY(8px);animation:fadeUp .7s ease .15s forwards}
-.hero-sub{margin-top:8px;color:rgba(255,255,255,0.95);opacity:0;transform:translateY(8px);animation:fadeUp .7s ease .28s forwards}
-
-/* Booking area */
-.section-title{color:var(--accent-600);margin-bottom:12px;font-weight:600}
-.booking-grid{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start}
-.card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow);border:1px solid rgba(2,6,23,0.04);transform:translateY(6px);opacity:0;animation:fadeUp .6s ease .35s forwards}
-
-/* calendar */
-.calendar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-.nav-month{background:transparent;border:1px solid rgba(15,23,42,0.06);padding:6px 10px;border-radius:8px;cursor:pointer;transition:all var(--transition)}
-.nav-month:hover{transform:translateY(-3px)}
-.month-label{font-weight:600}
-.calendar-weekdays{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:8px}
-.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-.day {
-  padding:10px 8px;border-radius:8px;text-align:center;font-weight:600;cursor:default;
-  background:transparent;color:var(--muted);
-  border:1px solid rgba(2,6,23,0.03);transition:all var(--transition)
-}
-.day.disabled{opacity:0.45;background:transparent;color:var(--muted);cursor:not-allowed}
-.day.available{background:linear-gradient(180deg,#dcfce7,#bbf7d0);color:var(--accent-600);cursor:pointer;border:1px solid rgba(34,197,94,0.12)}
-.day.available:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(34,197,94,0.06)}
-.day.selected{outline:3px solid rgba(16,185,129,0.14);box-shadow:0 10px 30px rgba(16,185,129,0.08)}
-.hint{font-size:0.85rem;color:var(--muted);margin-top:12px}
-
-/* form card */
-.form-row{margin-bottom:12px;display:flex;flex-direction:column;gap:6px}
-.form-row.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-label{font-weight:600;color:#0b1220;font-size:0.95rem}
-input[type="text"],input[type="email"],input[type="tel"],textarea{
-  padding:10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06);font-size:0.95rem;outline:none;transition:box-shadow .15s ease
-}
-input:focus,textarea:focus{box-shadow:0 8px 20px rgba(16,185,129,0.06)}
-textarea{resize:vertical}
-.times-row .time-slots{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.time-slot{padding:8px 10px;border-radius:8px;border:1px solid rgba(2,6,23,0.06);cursor:pointer;background:var(--glass);color:#0b1220;transition:all var(--transition)}
-.time-slot.disabled{opacity:0.4;cursor:not-allowed}
-.time-slot.selected{background:linear-gradient(90deg,var(--accent), #4ade80);color:white;border:0;box-shadow:0 8px 20px rgba(16,185,129,0.12)}
-.small.muted{color:var(--muted);font-size:0.9rem;margin-top:8px}
-
-/* actions */
-.form-actions{display:flex;gap:10px;align-items:center;margin-top:6px}
-.btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;transition:all var(--transition)}
-.btn.primary{background:var(--accent);color:white;box-shadow:0 8px 24px rgba(16,185,129,0.12)}
-.btn.primary:hover{transform:translateY(-4px)}
-.btn.ghost{background:transparent;border:1px solid rgba(2,6,23,0.06)}
-
-/* health tips */
-.health-tips{margin-top:18px;color:var(--muted);font-size:0.95rem}
-.health-tips ul{margin:6px 0 0 18px}
-
-/* modal */
-.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(3,7,18,0.5);visibility:hidden;opacity:0;transition:all .18s ease}
-.modal[aria-hidden="false"]{visibility:visible;opacity:1}
-.modal-content{background:white;padding:18px;border-radius:12px;max-width:440px;width:90%;box-shadow:0 8px 30px rgba(2,6,23,0.06)}
-.modal-content h3{margin-top:0}
-.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
-
-/* footer */
-.site-footer{padding:18px 0;text-align:center;color:var(--muted);margin-top:28px}
-
-/* animations */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(10px)}
-  to{opacity:1;transform:translateY(0)}
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f7f7f7;
 }
 
-/* responsive */
-@media (max-width:980px){
-  .booking-grid{grid-template-columns:1fr}
-  .hero{height:240px}
-  .form-row.two{grid-template-columns:1fr}
+header {
+  background: linear-gradient(to right, #000, #444);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
 }
-@media (max-width:480px){
-  .hero h1{font-size:1.45rem}
-  .month-label{font-size:0.95rem}
-  .day{padding:8px 6px;font-size:0.9rem}
+
+#logo {
+  height: 60px;
+  vertical-align: middle;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background: #111;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
 }
